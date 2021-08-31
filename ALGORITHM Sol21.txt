@@ -1,0 +1,29 @@
+
+ALGORITHM distinctElementsInTwoSets
+    VAR 
+       i  : INTEGER;
+       sum  : INTEGER;
+       tab1,tab2 : HASH_TABLE<INTEGER,INTEGER>;
+
+    BEGIN
+    Sum:=0;
+      
+          FOR i FROM 0 TO tab1.length-1 STEP 1 DO
+
+            IF (tab2.lookup tab1[i] = FALSE)
+            then
+                sum := sum + tab1[i];
+
+            END_IF
+        END_FOR
+
+
+        FOR i FROM 0 TO tab2.length-1 STEP 1 DO
+             IF (tab1.lookup tab2[i]) = FALSE)
+                sum := sum + tab2[i];
+
+            END_IF
+        END_FOR
+
+   Write("Distinct Elements Sum : " + sum);
+   END

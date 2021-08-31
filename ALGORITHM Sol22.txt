@@ -1,0 +1,32 @@
+ALGORITHM distinctElementsInTwoSets2
+    VAR 
+       i , j: INTEGER;
+       sum  : INTEGER :=0;
+       tab1 : ARRAY_OF INTEGER;// array tab1
+       tab2 : ARRAY_OF INTEGER;// array tab2 
+
+
+    BEGIN
+      Read(tab1);
+      Read(tab2);
+        FOR i FROM 0 TO tab1.length-1 STEP 1 DO
+          FOR j FROM 0 TO tab2.length-1 STEP 1 DO
+
+            IF (tab1[i] <> tab2[j]) 
+              sum := sum + tab1[i];
+
+            END_IF
+           END_FOR 
+        END_FOR
+      FOR j FROM 0 TO tab2.length-1 STEP 1 DO
+          FOR i FROM 0 TO tab1.length-1 STEP 1 DO
+
+            IF (tab1[i] <> tab2[j]) 
+               sum := sum + tab2[j];
+            END_IF
+           END_FOR 
+        END_FOR
+
+   Write("Distinct Elements Sum : " + sum);
+
+   END
